@@ -9,7 +9,7 @@ import UIKit
 
 class PostViewController: UIViewController {
     
-    private let model: PostModel
+    let model: PostModel
     
     init(model: PostModel) {
         self.model = model
@@ -22,8 +22,9 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        let colors: [UIColor] = [.red, .green, .blue, .black, .orange, .systemPink]
+        view.backgroundColor = colors.randomElement()
     }
     
 
