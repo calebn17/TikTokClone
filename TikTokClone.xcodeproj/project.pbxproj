@@ -34,6 +34,8 @@
 		AF6EC552284A39DA0036EA61 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC551284A39DA0036EA61 /* AuthManager.swift */; };
 		AF6EC554284A39EB0036EA61 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC553284A39EA0036EA61 /* HapticsManager.swift */; };
 		AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */; };
+		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
+		AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F31284AABFC00E32542 /* PostModel.swift */; };
 		C428CBE8BB0D2D71620AF446 /* Pods_TikTokClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C3BA29BB38AEAFEE73DF47 /* Pods_TikTokClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		AF6EC551284A39DA0036EA61 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		AF6EC553284A39EA0036EA61 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AFF45F31284AABFC00E32542 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		BE19DC640D13BD00B97DF7ED /* Pods-TikTokClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone.release.xcconfig"; path = "Target Support Files/Pods-TikTokClone/Pods-TikTokClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +212,7 @@
 				AF6EC4FC284A33ED0036EA61 /* AppDelegate.swift */,
 				AF6EC50A284A33EF0036EA61 /* LaunchScreen.storyboard */,
 				AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */,
+				AFF45F2F284AA1A200E32542 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 		AF6EC532284A378E0036EA61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AFF45F31284AABFC00E32542 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -546,11 +552,13 @@
 				AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */,
 				AF6EC53F284A38F20036EA61 /* UserListViewController.swift in Sources */,
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
+				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,
 				AF6EC53D284A38D70036EA61 /* ProfileViewController.swift in Sources */,
 				AF6EC542284A391C0036EA61 /* SignInViewController.swift in Sources */,
 				AF6EC548284A395E0036EA61 /* TabBarViewController.swift in Sources */,
 				AF6EC539284A38BF0036EA61 /* CameraViewController.swift in Sources */,
+				AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */,
 				AF6EC54C284A39AA0036EA61 /* APICaller.swift in Sources */,
 				AF6EC546284A39410036EA61 /* SettingsViewController.swift in Sources */,
 				AF6EC554284A39EB0036EA61 /* HapticsManager.swift in Sources */,
@@ -734,7 +742,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,7 +772,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

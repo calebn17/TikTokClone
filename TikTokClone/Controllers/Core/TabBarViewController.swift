@@ -39,7 +39,7 @@ class TabBarViewController: UITabBarController {
         
         setViewControllers([nav1, nav2, camera, nav3, nav4], animated: false)
         
-        
+        UITabBar.appearance().tintColor = .label
     }
     
 
