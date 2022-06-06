@@ -14,7 +14,6 @@ class HomeViewController: UIViewController {
     private let horizontalScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.bounces = false
-        scrollView.backgroundColor = .red
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
         return scrollView
@@ -32,6 +31,13 @@ class HomeViewController: UIViewController {
         options: [:]
     )
     
+    let control: UISegmentedControl = {
+        let titles = ["Following", "For You"]
+        let control = UISegmentedControl(items: titles)
+        control.selectedSegmentIndex = 1
+        return control
+    }()
+    
     private var forYouPosts = PostModel.mockModels()
     private var followingPosts = PostModel.mockModels()
 
@@ -41,8 +47,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(horizontalScrollView)
+        horizontalScrollView.delegate = self
         setUpFeed()
         horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
+        setUpHeaderButtons()
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,6 +71,7 @@ class HomeViewController: UIViewController {
         guard let model = followingPosts.first else {return}
         
         let vc = PostViewController(model: model)
+        vc.delegate = self
         followingPageViewController.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
         followingPageViewController.dataSource = self
         
@@ -77,18 +86,30 @@ class HomeViewController: UIViewController {
         guard let model = forYouPosts.first else {return}
         
         let vc = PostViewController(model: model)
+        vc.delegate = self
         forYouPageViewController.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
         forYouPageViewController.dataSource = self
         
         horizontalScrollView.addSubview(forYouPageViewController.view)
         forYouPageViewController.view.frame = CGRect(x: view.width, y: 0, width: horizontalScrollView.width, height: horizontalScrollView.height)
         addChild(forYouPageViewController)
+        //below line is needed to finish adding the child to the parent
         forYouPageViewController.didMove(toParent: self)
     }
 
+    private func setUpHeaderButtons() {
+       
+        control.addTarget(self, action: #selector(didChangeSegmentControl(_:)), for: .valueChanged)
+        navigationItem.titleView = control
+    }
+    
+    @objc private func didChangeSegmentControl(_ sender: UISegmentedControl) {
+        horizontalScrollView.setContentOffset(CGPoint(x: view.width * CGFloat(sender.selectedSegmentIndex), y: 0), animated: true)
+    }
 
 }
 
+//MARK: - UIPage VC DataSource Methods
 extension HomeViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
@@ -103,6 +124,7 @@ extension HomeViewController: UIPageViewControllerDataSource {
         let priorIndex = index - 1
         let model = currentPosts[priorIndex]
         let vc = PostViewController(model: model)
+        vc.delegate = self
         return vc
     }
     
@@ -117,9 +139,11 @@ extension HomeViewController: UIPageViewControllerDataSource {
         let nextIndex = index + 1
         let model = currentPosts[nextIndex]
         let vc = PostViewController(model: model)
+        vc.delegate = self
         return vc
     }
     
+    //computed var that gets the current collection
     var currentPosts: [PostModel] {
         
         if horizontalScrollView.contentOffset.x == 0 {
@@ -130,6 +154,69 @@ extension HomeViewController: UIPageViewControllerDataSource {
         //For You
         return forYouPosts
     }
+}
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x <= (view.width/2) {
+            control.selectedSegmentIndex = 0
+        }
+        else if scrollView.contentOffset.x > (view.width/2) {
+            control.selectedSegmentIndex = 1
+        }
+    }
+}
+
+extension HomeViewController: PostViewControllerDelegate {
     
-    
+    func postViewController(_ vc: PostViewController, didTapcommentButtonFor post: PostModel) {
+        //disables horizontal scrolling when comment tray is presented
+        horizontalScrollView.isScrollEnabled = false
+        //disables vertical scrolling when comment tray is presented
+        if horizontalScrollView.contentOffset.x == 0 {
+            //following feed
+            //niling dataSource prevents scrolling because the vc doesn't have any data on the previous or next post
+            followingPageViewController.dataSource = nil
+        }
+        else {
+            //For You feed
+            //niling dataSource prevents scrolling because the vc doesn't have any data on the previous or next post
+            followingPageViewController.dataSource = nil
+        }
+        //present comment tray
+        //using this implementation instead of a simple present in order to have that "tray" affect
+        let vc = CommentViewController(post: post)
+        vc.delegate = self
+        addChild(vc)
+        vc.didMove(toParent: self)
+        view.addSubview(vc.view)
+        let frame: CGRect = CGRect(x: 0, y: view.height, width: view.width, height: view.height * 0.76)
+        
+        vc.view.frame = frame
+        UIView.animate(withDuration: 0.2) {
+            vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
+        }
+    }
+}
+
+extension HomeViewController: CommentViewControllerDelegate {
+    func didTapCloseForComments(with viewController: CommentViewController) {
+        //close comments with animation
+        let frame: CGRect = viewController.view.frame
+        UIView.animate(withDuration: 0.2) {
+            viewController.view.frame = CGRect(x: 0, y: self.view.height, width: frame.width, height: frame.height)
+        } completion: {[weak self] done in
+            if done {
+                DispatchQueue.main.async {
+                    //remove Comment VC as child
+                    viewController.view.removeFromSuperview()
+                    viewController.removeFromParent()
+                    //allow horizontal and vertical scroll
+                    self?.horizontalScrollView.isScrollEnabled = true
+                    self?.forYouPageViewController.dataSource = self
+                    self?.followingPageViewController.dataSource = self
+                }
+            }
+        }
+    }
 }

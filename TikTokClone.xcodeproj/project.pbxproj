@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		070B350C61834CC5055F020F /* Pods_TikTokCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */; };
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
+		AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */; };
 		AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC4FC284A33ED0036EA61 /* AppDelegate.swift */; };
 		AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */; };
 		AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC500284A33ED0036EA61 /* HomeViewController.swift */; };
@@ -65,6 +66,7 @@
 		49C3BA29BB38AEAFEE73DF47 /* Pods_TikTokClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		AF6EC4F9284A33ED0036EA61 /* TikTokClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6EC4FC284A33ED0036EA61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				AF6EC543284A39310036EA61 /* SignUPViewController.swift */,
 				AF6EC545284A39410036EA61 /* SettingsViewController.swift */,
 				AF6EC549284A39960036EA61 /* PostViewController.swift */,
+				AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */,
 				AF6EC53F284A38F20036EA61 /* UserListViewController.swift in Sources */,
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
+				AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */,
 				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,
 				AF6EC53D284A38D70036EA61 /* ProfileViewController.swift in Sources */,
