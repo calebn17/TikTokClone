@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		070B350C61834CC5055F020F /* Pods_TikTokCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */; };
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
+		AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */; };
+		AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */; };
+		AF4BE9412850D478006BA719 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */; };
+		AF4BE9432850D490006BA719 /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE9422850D490006BA719 /* ExploreHashtagCollectionViewCell.swift */; };
 		AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */; };
 		AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF586EDB284F77DF00DB6655 /* PostCommentModel.swift */; };
 		AF586EDE284F780900DB6655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF586EDD284F780900DB6655 /* User.swift */; };
@@ -73,6 +77,10 @@
 		49C3BA29BB38AEAFEE73DF47 /* Pods_TikTokClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		AF4BE9422850D490006BA719 /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		AF586EDB284F77DF00DB6655 /* PostCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentModel.swift; sourceTree = "<group>"; };
 		AF586EDD284F780900DB6655 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -170,6 +178,10 @@
 			isa = PBXGroup;
 			children = (
 				AF586EE0284F7AE700DB6655 /* CommentTableViewCell.swift */,
+				AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */,
+				AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */,
+				AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */,
+				AF4BE9422850D490006BA719 /* ExploreHashtagCollectionViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -582,13 +594,17 @@
 				AF6EC54A284A39960036EA61 /* PostViewController.swift in Sources */,
 				AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */,
 				AF6EC537284A38B30036EA61 /* ExploreViewController.swift in Sources */,
+				AF4BE9432850D490006BA719 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				AF6EC550284A39CC0036EA61 /* DatabaseManager.swift in Sources */,
 				AF79880828500B1A00DCCC0B /* ExploreCell.swift in Sources */,
 				AF6EC53B284A38CC0036EA61 /* NotificationViewController.swift in Sources */,
+				AF4BE9412850D478006BA719 /* ExploreUserCollectionViewCell.swift in Sources */,
 				AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */,
 				AF6EC53F284A38F20036EA61 /* UserListViewController.swift in Sources */,
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
 				AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */,
+				AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */,
+				AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */,
 				AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */,
 				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,
