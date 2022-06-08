@@ -169,7 +169,7 @@ extension HomeViewController: UIScrollViewDelegate {
 
 extension HomeViewController: PostViewControllerDelegate {
     
-    func postViewController(_ vc: PostViewController, didTapcommentButtonFor post: PostModel) {
+    func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel) {
         //disables horizontal scrolling when comment tray is presented
         horizontalScrollView.isScrollEnabled = false
         //disables vertical scrolling when comment tray is presented
@@ -196,6 +196,12 @@ extension HomeViewController: PostViewControllerDelegate {
         UIView.animate(withDuration: 0.2) {
             vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
         }
+    }
+    
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel) {
+        let user = post.user
+        let vc = ProfileViewController(user: user)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

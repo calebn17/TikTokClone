@@ -15,6 +15,7 @@ class CommentViewController: UIViewController {
     
     private let post: PostModel
     weak var delegate: CommentViewControllerDelegate?
+    private var comments: [PostCommentModel] = []
     
     private let closeButton: UIButton = {
         let button = UIButton()
@@ -25,7 +26,7 @@ class CommentViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CommentTableViewCell.self, forCellReuseIdentifier: CommentTableViewCell.identifier)
         tableView.backgroundColor = .systemBackground
         return tableView
     }()
@@ -53,12 +54,13 @@ class CommentViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        closeButton.frame = CGRect(x: view.width - 45, y: 10, width: 35, height: 35)
+        closeButton.frame = CGRect(x: view.width - 35, y: 10, width: 25, height: 25)
         tableView.frame = CGRect(x: 0, y: closeButton.bottom, width: view.width, height: view.width - closeButton.bottom)
     }
     
     private func fetchPostComments() {
         
+        self.comments = PostCommentModel.mockComments()
     }
     
     @objc private func didTapClose() {
@@ -71,12 +73,22 @@ class CommentViewController: UIViewController {
 extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "This is a great Post"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as? CommentTableViewCell
+        else {return UITableViewCell()}
+        
+        cell.configure(with: comments[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

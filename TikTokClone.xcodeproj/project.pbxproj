@@ -10,6 +10,10 @@
 		070B350C61834CC5055F020F /* Pods_TikTokCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */; };
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
 		AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */; };
+		AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF586EDB284F77DF00DB6655 /* PostCommentModel.swift */; };
+		AF586EDE284F780900DB6655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF586EDD284F780900DB6655 /* User.swift */; };
+		AF586EE1284F7AE700DB6655 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF586EE0284F7AE700DB6655 /* CommentTableViewCell.swift */; };
+		AF586EE3284F8BDA00DB6655 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AF586EE2284F8BDA00DB6655 /* video.mp4 */; };
 		AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC4FC284A33ED0036EA61 /* AppDelegate.swift */; };
 		AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */; };
 		AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC500284A33ED0036EA61 /* HomeViewController.swift */; };
@@ -34,6 +38,9 @@
 		AF6EC550284A39CC0036EA61 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC54F284A39CC0036EA61 /* DatabaseManager.swift */; };
 		AF6EC552284A39DA0036EA61 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC551284A39DA0036EA61 /* AuthManager.swift */; };
 		AF6EC554284A39EB0036EA61 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EC553284A39EA0036EA61 /* HapticsManager.swift */; };
+		AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880528500AFA00DCCC0B /* ExploreSection.swift */; };
+		AF79880828500B1A00DCCC0B /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880728500B1A00DCCC0B /* ExploreCell.swift */; };
+		AF79880A28500B3B00DCCC0B /* ExploreSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */; };
 		AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */; };
 		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
 		AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F31284AABFC00E32542 /* PostModel.swift */; };
@@ -67,6 +74,10 @@
 		690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		AF586EDB284F77DF00DB6655 /* PostCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentModel.swift; sourceTree = "<group>"; };
+		AF586EDD284F780900DB6655 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AF586EE0284F7AE700DB6655 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		AF586EE2284F8BDA00DB6655 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		AF6EC4F9284A33ED0036EA61 /* TikTokClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTokClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6EC4FC284A33ED0036EA61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +106,9 @@
 		AF6EC54F284A39CC0036EA61 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AF6EC551284A39DA0036EA61 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		AF6EC553284A39EA0036EA61 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		AF79880528500AFA00DCCC0B /* ExploreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSection.swift; sourceTree = "<group>"; };
+		AF79880728500B1A00DCCC0B /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionType.swift; sourceTree = "<group>"; };
 		AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFF45F31284AABFC00E32542 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -150,6 +164,14 @@
 				1133BABD544C59557C4FA960 /* Pods-TikTokCloneTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF586EDF284F7AC200DB6655 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AF586EE0284F7AE700DB6655 /* CommentTableViewCell.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		AF6EC4F0284A33ED0036EA61 = {
@@ -210,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6EC508284A33EF0036EA61 /* Assets.xcassets */,
+				AF586EE2284F8BDA00DB6655 /* video.mp4 */,
 				AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */,
 				AF6EC4FC284A33ED0036EA61 /* AppDelegate.swift */,
 				AF6EC50A284A33EF0036EA61 /* LaunchScreen.storyboard */,
@@ -231,6 +254,7 @@
 		AF6EC531284A37820036EA61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AF586EDF284F7AC200DB6655 /* Other */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +263,11 @@
 			isa = PBXGroup;
 			children = (
 				AFF45F31284AABFC00E32542 /* PostModel.swift */,
+				AF586EDB284F77DF00DB6655 /* PostCommentModel.swift */,
+				AF586EDD284F780900DB6655 /* User.swift */,
+				AF79880528500AFA00DCCC0B /* ExploreSection.swift */,
+				AF79880728500B1A00DCCC0B /* ExploreCell.swift */,
+				AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +429,7 @@
 			files = (
 				AF6EC50C284A33EF0036EA61 /* LaunchScreen.storyboard in Resources */,
 				AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */,
+				AF586EE3284F8BDA00DB6655 /* video.mp4 in Resources */,
 				AF6EC509284A33EF0036EA61 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,14 +577,18 @@
 			files = (
 				AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */,
 				AF6EC552284A39DA0036EA61 /* AuthManager.swift in Sources */,
+				AF586EE1284F7AE700DB6655 /* CommentTableViewCell.swift in Sources */,
 				AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */,
 				AF6EC54A284A39960036EA61 /* PostViewController.swift in Sources */,
+				AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */,
 				AF6EC537284A38B30036EA61 /* ExploreViewController.swift in Sources */,
 				AF6EC550284A39CC0036EA61 /* DatabaseManager.swift in Sources */,
+				AF79880828500B1A00DCCC0B /* ExploreCell.swift in Sources */,
 				AF6EC53B284A38CC0036EA61 /* NotificationViewController.swift in Sources */,
 				AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */,
 				AF6EC53F284A38F20036EA61 /* UserListViewController.swift in Sources */,
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
+				AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */,
 				AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */,
 				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,
@@ -562,8 +596,10 @@
 				AF6EC542284A391C0036EA61 /* SignInViewController.swift in Sources */,
 				AF6EC548284A395E0036EA61 /* TabBarViewController.swift in Sources */,
 				AF6EC539284A38BF0036EA61 /* CameraViewController.swift in Sources */,
+				AF79880A28500B3B00DCCC0B /* ExploreSectionType.swift in Sources */,
 				AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */,
 				AF6EC54C284A39AA0036EA61 /* APICaller.swift in Sources */,
+				AF586EDE284F780900DB6655 /* User.swift in Sources */,
 				AF6EC546284A39410036EA61 /* SettingsViewController.swift in Sources */,
 				AF6EC554284A39EB0036EA61 /* HapticsManager.swift in Sources */,
 				AF6EC54E284A39B40036EA61 /* StorageManager.swift in Sources */,
