@@ -46,6 +46,8 @@
 		AF79880828500B1A00DCCC0B /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880728500B1A00DCCC0B /* ExploreCell.swift */; };
 		AF79880A28500B3B00DCCC0B /* ExploreSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */; };
 		AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */; };
+		AF9D881328517D9900BBC3D7 /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = AF9D881228517D9900BBC3D7 /* explore.json */; };
+		AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */; };
 		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
 		AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F31284AABFC00E32542 /* PostModel.swift */; };
 		C428CBE8BB0D2D71620AF446 /* Pods_TikTokClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C3BA29BB38AEAFEE73DF47 /* Pods_TikTokClone.framework */; };
@@ -118,6 +120,8 @@
 		AF79880728500B1A00DCCC0B /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
 		AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionType.swift; sourceTree = "<group>"; };
 		AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF9D881228517D9900BBC3D7 /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = explore.json; path = ../../../../explore.json; sourceTree = "<group>"; };
+		AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
 		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFF45F31284AABFC00E32542 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		BE19DC640D13BD00B97DF7ED /* Pods-TikTokClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone.release.xcconfig"; path = "Target Support Files/Pods-TikTokClone/Pods-TikTokClone.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		AF6EC52F284A37520036EA61 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AF9D881228517D9900BBC3D7 /* explore.json */,
 				AF6EC508284A33EF0036EA61 /* Assets.xcassets */,
 				AF586EE2284F8BDA00DB6655 /* video.mp4 */,
 				AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */,
@@ -299,6 +304,7 @@
 				AF6EC54F284A39CC0036EA61 /* DatabaseManager.swift */,
 				AF6EC551284A39DA0036EA61 /* AuthManager.swift */,
 				AF6EC553284A39EA0036EA61 /* HapticsManager.swift */,
+				AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9D881328517D9900BBC3D7 /* explore.json in Resources */,
 				AF6EC50C284A33EF0036EA61 /* LaunchScreen.storyboard in Resources */,
 				AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */,
 				AF586EE3284F8BDA00DB6655 /* video.mp4 in Resources */,
@@ -590,6 +597,7 @@
 				AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */,
 				AF6EC552284A39DA0036EA61 /* AuthManager.swift in Sources */,
 				AF586EE1284F7AE700DB6655 /* CommentTableViewCell.swift in Sources */,
+				AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */,
 				AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */,
 				AF6EC54A284A39960036EA61 /* PostViewController.swift in Sources */,
 				AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */,

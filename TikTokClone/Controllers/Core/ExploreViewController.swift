@@ -42,14 +42,13 @@ class ExploreViewController: UIViewController {
     private func configureModels() {
         
         //Banner
-        var cells = [ExploreCell]()
-        for _ in 0...1000 {
-            let cell = ExploreCell.banner(viewModel: ExploreBannerViewModel(image: UIImage(named: "test"), title: "Foo", handler: {
-                
-            }))
-            cells.append(cell)
-        }
-        sections.append(ExploreSection(type: .banners, cells: cells))
+        sections.append(ExploreSection(type: .banners, cells:
+                                        ExploreManager.shared.getExploreBanners().compactMap(
+                                            //the "return" keyword here is optional, but probably more readable if I include it
+                                            {return ExploreCell.banner(viewModel: $0)}
+                                        )
+                                      )
+        )
         
         //Trending posts
         var posts = [ExploreCell]()
@@ -75,16 +74,16 @@ class ExploreViewController: UIViewController {
         
         //Trending Hashtags
         sections.append(ExploreSection(type: .trendingHashtags, cells: [
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "", icon: nil, count: 1, handler: {
+            .hashtag(viewModel: ExploreHashtagViewModel(text: "#foryou", icon: UIImage(systemName: "house"), count: 1, handler: {
                 
             })),
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "", icon: nil, count: 1, handler: {
+            .hashtag(viewModel: ExploreHashtagViewModel(text: "#iphone12", icon: UIImage(systemName: "airplane"), count: 1, handler: {
                 
             })),
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "", icon: nil, count: 1, handler: {
+            .hashtag(viewModel: ExploreHashtagViewModel(text: "#tiktokcourse", icon: UIImage(systemName: "camera"), count: 1, handler: {
                 
             })),
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "", icon: nil, count: 0, handler: {
+            .hashtag(viewModel: ExploreHashtagViewModel(text: "#macbook", icon: UIImage(systemName: "bell"), count: 0, handler: {
                 
             }))
         ]))
@@ -112,6 +111,7 @@ class ExploreViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         self.collectionView = collectionView
     }
@@ -153,6 +153,24 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
                     as? ExploreUserCollectionViewCell else {return UICollectionViewCell()}
             cell.configure(with: viewModel)
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        HapticsManager.shared.vibrateForSelection()
+        
+        let model = sections[indexPath.section].cells[indexPath.row]
+        
+        switch model {
+        case .banner(let viewModel):
+           break
+        case .post(let viewModel):
+            break
+        case .hashtag(let viewModel):
+            break
+        case .user(let viewModel):
+            break
         }
     }
 }

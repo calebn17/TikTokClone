@@ -28,7 +28,7 @@ class ExploreHashtagCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.addSubview(iconImageView)
         contentView.addSubview(hashtagLabel)
-        
+        contentView.backgroundColor = .systemGray5
     }
     
     required init?(coder: NSCoder) {
@@ -37,9 +37,9 @@ class ExploreHashtagCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let iconSize: CGFloat = contentView.height/5
+        let iconSize: CGFloat = contentView.height/3
         iconImageView.frame = CGRect(x: 10, y: (contentView.height - iconSize)/2, width: iconSize, height: iconSize).integral
-        
+        hashtagLabel.frame = CGRect(x: iconImageView.right + 10, y: 0, width: contentView.width - iconImageView.right - 10, height: contentView.height).integral
     }
     
     override func prepareForReuse() {
