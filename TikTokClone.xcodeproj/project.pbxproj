@@ -325,14 +325,22 @@
 		AF6EC540284A38F80036EA61 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				AF7116E2285231EE0022FC6F /* Authentication */,
 				AF6EC53E284A38F20036EA61 /* UserListViewController.swift */,
-				AF6EC541284A391C0036EA61 /* SignInViewController.swift */,
-				AF6EC543284A39310036EA61 /* SignUPViewController.swift */,
 				AF6EC545284A39410036EA61 /* SettingsViewController.swift */,
 				AF6EC549284A39960036EA61 /* PostViewController.swift */,
 				AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		AF7116E2285231EE0022FC6F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AF6EC541284A391C0036EA61 /* SignInViewController.swift */,
+				AF6EC543284A39310036EA61 /* SignUPViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

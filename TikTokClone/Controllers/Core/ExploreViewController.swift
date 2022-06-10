@@ -24,6 +24,7 @@ class ExploreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        ExploreManager.shared.delegate = self
         setUpSearchBar()
         setUpCollectionView()
         configureModels()
@@ -43,59 +44,34 @@ class ExploreViewController: UIViewController {
         
         //Banner
         sections.append(ExploreSection(type: .banners, cells:
+                                        //compactMap here because we want to transfrom the viewModel from the ExploreManager into a ExploreCell type
                                         ExploreManager.shared.getExploreBanners().compactMap(
                                             //the "return" keyword here is optional, but probably more readable if I include it
-                                            {return ExploreCell.banner(viewModel: $0)}
-                                        )
-                                      )
+                                            {return ExploreCell.banner(viewModel: $0)}))
         )
         
         //Trending posts
-        var posts = [ExploreCell]()
-        for _ in 0...40 {
-            posts.append(ExploreCell.post(viewModel: ExplorePostViewModel(thumbnailImage: UIImage(named: "test"), caption: "This was a really cool post and a long caption", handler: {
-                
-            })))
-        }
-        sections.append(ExploreSection(type: .trendingPosts, cells: posts))
+        sections.append(ExploreSection(type: .trendingPosts, cells: ExploreManager.shared.getExploreTrendingPosts().compactMap({ExploreCell.post(viewModel: $0)})))
         
         //Users
-        sections.append(ExploreSection(type: .users, cells: [
-            .user(viewModel: ExploreUserViewModel(profilePicture: nil, username: "charlie", followerCount: 0, handler: {
-            
-            })),
-            .user(viewModel: ExploreUserViewModel(profilePicture: nil, username: "jason", followerCount: 0, handler: {
-                                                                 
-            })),
-            .user(viewModel: ExploreUserViewModel(profilePicture: nil, username: "spiderman", followerCount: 0, handler: {
-                
-            }))
-        ]))
+        sections.append(ExploreSection(
+            type: .users,
+            //compactMap here because we want to transfrom the viewModel from the ExploreManager into a ExploreCell type
+            cells: ExploreManager.shared.getExploreCreators().compactMap({ExploreCell.user(viewModel: $0)})))
         
         //Trending Hashtags
-        sections.append(ExploreSection(type: .trendingHashtags, cells: [
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "#foryou", icon: UIImage(systemName: "house"), count: 1, handler: {
-                
-            })),
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "#iphone12", icon: UIImage(systemName: "airplane"), count: 1, handler: {
-                
-            })),
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "#tiktokcourse", icon: UIImage(systemName: "camera"), count: 1, handler: {
-                
-            })),
-            .hashtag(viewModel: ExploreHashtagViewModel(text: "#macbook", icon: UIImage(systemName: "bell"), count: 0, handler: {
-                
-            }))
-        ]))
+        sections.append(ExploreSection(
+            type: .trendingHashtags,
+            cells: ExploreManager.shared.getExploreHashtags().compactMap({ExploreCell.hashtag(viewModel: $0)})))
         
         //Recommended
-        sections.append(ExploreSection(type: .recommended, cells: posts))
+        sections.append(ExploreSection(type: .recommended, cells: ExploreManager.shared.getExploreRecommendedPosts().compactMap({ExploreCell.post(viewModel: $0)})))
         
         //Popular
-        sections.append(ExploreSection(type: .popular, cells: posts))
+        sections.append(ExploreSection(type: .popular, cells: ExploreManager.shared.getExplorePopularPosts().compactMap({ExploreCell.post(viewModel: $0)})))
         
         // New/Recent
-        sections.append(ExploreSection(type: .new, cells: posts))
+        sections.append(ExploreSection(type: .new, cells: ExploreManager.shared.getExploreRecentPosts().compactMap({ExploreCell.post(viewModel: $0)})))
     }
     
     private func setUpCollectionView() {
@@ -164,19 +140,33 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         switch model {
         case .banner(let viewModel):
-           break
+            viewModel.handler()
         case .post(let viewModel):
-            break
+            viewModel.handler()
         case .hashtag(let viewModel):
-            break
+            viewModel.handler()
         case .user(let viewModel):
-            break
+            viewModel.handler()
         }
     }
 }
 
 extension ExploreViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancel))
+    }
+    
+    @objc private func didTapCancel() {
+        navigationItem.rightBarButtonItem = nil
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+    }
 }
 
 //MARK: - Section Layouts
@@ -318,5 +308,16 @@ extension ExploreViewController {
             //Return
             return sectionLayout
         }
+    }
+}
+
+extension ExploreViewController: ExploreManagerDelegate {
+    func pushViewController(_ vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didTapHashTag(_ hashtag: String) {
+        searchBar.text = hashtag
+        searchBar.becomeFirstResponder()
     }
 }

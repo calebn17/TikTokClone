@@ -58,8 +58,8 @@ class ExploreUserCollectionViewCell: UICollectionViewCell {
     public func configure(with viewModel: ExploreUserViewModel) {
         usernameLabel.text = viewModel.username
         
-        if let url = viewModel.profilePicture {
-            
+        if let image = viewModel.profilePicture {
+            profilePicture.image = image
         }
         else {
             profilePicture.image = UIImage(systemName: "person.circle")

@@ -34,7 +34,7 @@ struct ExploreHashtagViewModel {
     let handler: (() -> Void)
 }
 struct ExploreUserViewModel {
-    let profilePicture: URL?
+    let profilePicture: UIImage?
     let username: String
     let followerCount: Int
     let handler: (() -> Void)
