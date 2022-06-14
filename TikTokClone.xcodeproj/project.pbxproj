@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		070B350C61834CC5055F020F /* Pods_TikTokCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */; };
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
+		AF158A472858AE4E00667A77 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A462858AE4E00667A77 /* AuthField.swift */; };
+		AF158A492858AE6300667A77 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A482858AE6300667A77 /* AuthButton.swift */; };
 		AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */; };
 		AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */; };
 		AF4BE9412850D478006BA719 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */; };
@@ -79,6 +81,8 @@
 		49C3BA29BB38AEAFEE73DF47 /* Pods_TikTokClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF158A462858AE4E00667A77 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
+		AF158A482858AE6300667A77 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */,
 				AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */,
 				AF4BE9422850D490006BA719 /* ExploreHashtagCollectionViewCell.swift */,
+				AF158A462858AE4E00667A77 /* AuthField.swift */,
+				AF158A482858AE6300667A77 /* AuthButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */,
+				AF158A492858AE6300667A77 /* AuthButton.swift in Sources */,
 				AF6EC552284A39DA0036EA61 /* AuthManager.swift in Sources */,
 				AF586EE1284F7AE700DB6655 /* CommentTableViewCell.swift in Sources */,
 				AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */,
@@ -624,6 +631,7 @@
 				AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */,
 				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,
+				AF158A472858AE4E00667A77 /* AuthField.swift in Sources */,
 				AF6EC53D284A38D70036EA61 /* ProfileViewController.swift in Sources */,
 				AF6EC542284A391C0036EA61 /* SignInViewController.swift in Sources */,
 				AF6EC548284A395E0036EA61 /* TabBarViewController.swift in Sources */,
