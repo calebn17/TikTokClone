@@ -41,6 +41,11 @@ class SignInViewController: UIViewController {
         configureButtons()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailField.becomeFirstResponder()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let imageSize: CGFloat = 100
@@ -101,7 +106,7 @@ class SignInViewController: UIViewController {
             return
         }
         
-        AuthManager.shared.signIn(with: email, password: password) { loggedIn in
+        AuthManager.shared.signIn(email: email, password: password) { loggedIn in
             if loggedIn {
                 //dissmiss sign in
             }
