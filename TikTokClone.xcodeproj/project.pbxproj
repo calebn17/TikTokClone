@@ -11,6 +11,10 @@
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
 		AF158A472858AE4E00667A77 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A462858AE4E00667A77 /* AuthField.swift */; };
 		AF158A492858AE6300667A77 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A482858AE6300667A77 /* AuthButton.swift */; };
+		AF4374F2285B5F7F0012ACF7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F1285B5F7F0012ACF7 /* Notifications.swift */; };
+		AF4374F4285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F3285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift */; };
+		AF4374F8285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F7285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift */; };
+		AF4374FA285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F9285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift */; };
 		AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */; };
 		AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */; };
 		AF4BE9412850D478006BA719 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */; };
@@ -85,6 +89,10 @@
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF158A462858AE4E00667A77 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
 		AF158A482858AE6300667A77 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		AF4374F1285B5F7F0012ACF7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		AF4374F3285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
+		AF4374F7285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationsPostLikeTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		AF4374F9285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
 		AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
 		AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -186,17 +194,44 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AF586EDF284F7AC200DB6655 /* Other */ = {
+		AF4374F5285B67CE0012ACF7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				AF586EE0284F7AE700DB6655 /* CommentTableViewCell.swift */,
+				AF158A462858AE4E00667A77 /* AuthField.swift */,
+				AF158A482858AE6300667A77 /* AuthButton.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AF4374F6285B67DE0012ACF7 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
 				AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */,
 				AF4BE93E2850D469006BA719 /* ExplorePostCollectionViewCell.swift */,
 				AF4BE9402850D478006BA719 /* ExploreUserCollectionViewCell.swift */,
 				AF4BE9422850D490006BA719 /* ExploreHashtagCollectionViewCell.swift */,
-				AF158A462858AE4E00667A77 /* AuthField.swift */,
-				AF158A482858AE6300667A77 /* AuthButton.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		AF4374FB285B685E0012ACF7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				AF4374F3285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift */,
+				AF4374F7285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift */,
+				AF4374F9285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		AF586EDF284F7AC200DB6655 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AF586EE0284F7AE700DB6655 /* CommentTableViewCell.swift */,
+				AF4374F6285B67DE0012ACF7 /* Explore */,
+				AF4374F5285B67CE0012ACF7 /* Auth */,
 				AF7F6F43285A136400F3F967 /* RecordButton.swift */,
+				AF4374FB285B685E0012ACF7 /* Notifications */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -296,6 +331,7 @@
 				AF79880528500AFA00DCCC0B /* ExploreSection.swift */,
 				AF79880728500B1A00DCCC0B /* ExploreCell.swift */,
 				AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */,
+				AF4374F1285B5F7F0012ACF7 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -615,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */,
+				AF4374F8285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift in Sources */,
 				AF158A492858AE6300667A77 /* AuthButton.swift in Sources */,
 				AF6EC552284A39DA0036EA61 /* AuthManager.swift in Sources */,
 				AF586EE1284F7AE700DB6655 /* CommentTableViewCell.swift in Sources */,
@@ -622,6 +659,7 @@
 				AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */,
 				AF6EC54A284A39960036EA61 /* PostViewController.swift in Sources */,
 				AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */,
+				AF4374F4285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift in Sources */,
 				AF6EC537284A38B30036EA61 /* ExploreViewController.swift in Sources */,
 				AF4BE9432850D490006BA719 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				AF6EC550284A39CC0036EA61 /* DatabaseManager.swift in Sources */,
@@ -634,8 +672,10 @@
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
 				AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */,
 				AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */,
+				AF4374F2285B5F7F0012ACF7 /* Notifications.swift in Sources */,
 				AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */,
 				AF7F6F44285A136400F3F967 /* RecordButton.swift in Sources */,
+				AF4374FA285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */,
 				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,

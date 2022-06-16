@@ -23,6 +23,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        title = user.username.uppercased()
+        //title = user.username.uppercased()
     }
 }

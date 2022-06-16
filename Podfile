@@ -14,6 +14,7 @@ target 'TikTokClone' do
   
   pod 'Appirater'
   pod 'SDWebImage'
+  pod 'ProgressHUD'
 
   target 'TikTokCloneTests' do
     inherit! :search_paths

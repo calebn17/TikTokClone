@@ -35,7 +35,6 @@ final class StorageManager {
         let number = Int.random(in: 0...1000)
         let unixTimestamp = Date().timeIntervalSince1970
         
-        //return uuidString + "_" + "\(number)" + "_" + "\(unixTimestamp)" + ".mov"
         return "\(uuidString)_\(number)_\(unixTimestamp).mov"
     }
 }
