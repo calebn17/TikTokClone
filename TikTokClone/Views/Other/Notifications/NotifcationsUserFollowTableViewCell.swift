@@ -59,17 +59,41 @@ class NotifcationsUserFollowTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         let iconSize: CGFloat = 50
-        avatarImageView.frame = CGRect(x: 10, y: (contentView.height - iconSize)/2, width: iconSize, height: iconSize)
         
+        avatarImageView.frame = CGRect(
+            x: 10,
+            y: 3,
+            width: iconSize,
+            height: iconSize)
+        
+        avatarImageView.layer.cornerRadius = 25
+        avatarImageView.layer.masksToBounds = true
         followButton.sizeToFit()
-        followButton.frame = CGRect(x: contentView.width - 110, y: (contentView.height - 40)/2, width: 100, height: 40)
+        
+        followButton.frame = CGRect(
+            x: contentView.width - 110,
+            y: 10,
+            width: 100,
+            height: 30)
         
         label.sizeToFit()
         dateLabel.sizeToFit()
-        let labelSize = label.sizeThatFits(CGSize(width: contentView.width - 20 - followButton.width - iconSize, height: contentView.height - 40))
-        label.frame = CGRect(x: avatarImageView.right, y: 0, width: labelSize.width, height: labelSize.height)
-        dateLabel.frame = CGRect(x: avatarImageView.right, y: contentView.height - 40, width: contentView.width - avatarImageView.width - followButton.width, height: 40)
         
+        let labelSize = label.sizeThatFits(CGSize(
+            width: contentView.width - 30 - followButton.width - iconSize,
+            height: contentView.height - 40))
+        
+        label.frame = CGRect(
+            x: avatarImageView.right + 10,
+            y: 0,
+            width: labelSize.width,
+            height: labelSize.height)
+        
+        dateLabel.frame = CGRect(
+            x: avatarImageView.right + 10,
+            y: label.bottom + 3,
+            width: contentView.width - avatarImageView.width - followButton.width,
+            height: 40)
     }
     
     override func prepareForReuse() {

@@ -4,11 +4,12 @@
 //
 //  Created by Caleb Ngai on 6/3/22.
 //
+//MARK: - Setup
 
 import UIKit
 
 class NotificationViewController: UIViewController {
-    
+
     private let noNotificationsLabel: UILabel = {
         let label = UILabel()
         label.textColor = .secondaryLabel
@@ -36,6 +37,8 @@ class NotificationViewController: UIViewController {
     }()
     
     private var notifications = [Notifications]()
+    
+//MARK: - View Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +71,8 @@ class NotificationViewController: UIViewController {
             }
         }
     }
+
+//MARK: - Configure Methods
     
     private func updateUI() {
         if notifications.isEmpty {
@@ -116,6 +121,33 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
             else {return UITableViewCell()}
             cell.configure(with: postName, model: model)
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else {return}
+        
+        let model = notifications[indexPath.row]
+        model.isHidden = true
+        
+        DataBaseManager.shared.markNotificationAsHidden(notificationID: model.identifier) { [weak self]success in
+            DispatchQueue.main.async {
+                if success {
+                    self?.notifications = self?.notifications.filter({$0.isHidden == false}) ?? []
+                    
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .none)
+                    tableView.endUpdates()
+                }
+            }
         }
     }
     
