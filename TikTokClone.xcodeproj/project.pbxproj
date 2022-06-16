@@ -48,6 +48,8 @@
 		AF79880828500B1A00DCCC0B /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880728500B1A00DCCC0B /* ExploreCell.swift */; };
 		AF79880A28500B3B00DCCC0B /* ExploreSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */; };
 		AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */; };
+		AF7F6F44285A136400F3F967 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F43285A136400F3F967 /* RecordButton.swift */; };
+		AF7F6F46285A1E7E00F3F967 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */; };
 		AF9D881328517D9900BBC3D7 /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = AF9D881228517D9900BBC3D7 /* explore.json */; };
 		AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */; };
 		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
@@ -124,6 +126,8 @@
 		AF79880728500B1A00DCCC0B /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
 		AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionType.swift; sourceTree = "<group>"; };
 		AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF7F6F43285A136400F3F967 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		AF9D881228517D9900BBC3D7 /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = explore.json; path = ../../../../explore.json; sourceTree = "<group>"; };
 		AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
 		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				AF4BE9422850D490006BA719 /* ExploreHashtagCollectionViewCell.swift */,
 				AF158A462858AE4E00667A77 /* AuthField.swift */,
 				AF158A482858AE6300667A77 /* AuthButton.swift */,
+				AF7F6F43285A136400F3F967 /* RecordButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				AF6EC545284A39410036EA61 /* SettingsViewController.swift */,
 				AF6EC549284A39960036EA61 /* PostViewController.swift */,
 				AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */,
+				AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				AF6EC537284A38B30036EA61 /* ExploreViewController.swift in Sources */,
 				AF4BE9432850D490006BA719 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				AF6EC550284A39CC0036EA61 /* DatabaseManager.swift in Sources */,
+				AF7F6F46285A1E7E00F3F967 /* CaptionViewController.swift in Sources */,
 				AF79880828500B1A00DCCC0B /* ExploreCell.swift in Sources */,
 				AF6EC53B284A38CC0036EA61 /* NotificationViewController.swift in Sources */,
 				AF4BE9412850D478006BA719 /* ExploreUserCollectionViewCell.swift in Sources */,
@@ -628,6 +635,7 @@
 				AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */,
 				AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */,
 				AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */,
+				AF7F6F44285A136400F3F967 /* RecordButton.swift in Sources */,
 				AF4DC211284E3B3C00CA6D30 /* CommentViewController.swift in Sources */,
 				AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */,
 				AF6EC544284A39310036EA61 /* SignUPViewController.swift in Sources */,

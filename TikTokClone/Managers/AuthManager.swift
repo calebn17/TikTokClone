@@ -21,6 +21,10 @@ final class AuthManager {
         case google
     }
     
+    enum AuthError: Error {
+        case signInFailed
+    }
+    
 //MARK: - Public Methods
     
     //computed value determining if user is signed in
@@ -30,10 +34,38 @@ final class AuthManager {
     
     public func signUp(username: String, email: String, password: String, completion: @escaping (Bool) -> Void) {
         
+        //Make sure entered username is available
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            guard result != nil, error == nil else {
+                completion(false)
+                return
+            }
+            UserDefaults.standard.set(username, forKey: "username")
+            DataBaseManager.shared.insertUser(with: email, username: username, completion: completion)
+        }
     }
     
-    public func signIn(email: String, password: String, completion: @escaping (Bool) -> Void) {
-        
+    public func signIn(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            guard result != nil, error == nil else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                else {
+                    completion(.failure(AuthError.signInFailed))
+                }
+                return
+            }
+            DataBaseManager.shared.getUsername(for: email) { username in
+                if let username = username {
+                    UserDefaults.standard.set(username, forKey: "username")
+                    print("Got username: \(username)")
+                }
+            }
+            
+            completion(.success(email))
+        }
     }
     
     public func signOut(completion: (Bool) -> Void) {
