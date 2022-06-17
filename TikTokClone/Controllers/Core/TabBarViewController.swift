@@ -42,13 +42,11 @@ class TabBarViewController: UITabBarController {
         let explore = ExploreViewController()
         let camera = CameraViewController()
         let notifications = NotificationViewController()
-        let profile = ProfileViewController(user:User(username: "CurrentLoggedInUser",
+        let profile = ProfileViewController(user:User(username: UserDefaults.standard.string(forKey: "username")?.uppercased() ?? "Me",
                                                      profilePictureURL: nil,
-                                                     identifier: "abc123"
+                                                      identifier: UserDefaults.standard.string(forKey: "username")?.lowercased() ?? ""
                                                     )
         )
-        
-        
         notifications.title = "Notifications"
         profile.title = "Profile"
         
@@ -67,6 +65,9 @@ class TabBarViewController: UITabBarController {
         cameraNav.navigationBar.shadowImage = UIImage()
         cameraNav.navigationBar.tintColor = .label
         
+        nav3.navigationBar.tintColor = .label
+        nav3.navigationItem.backButtonDisplayMode = .minimal
+        
         nav1.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "safari"), tag: 2)
         camera.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "camera"), tag: 3)
@@ -77,7 +78,4 @@ class TabBarViewController: UITabBarController {
         
         UITabBar.appearance().tintColor = .label
     }
-    
-
-
 }

@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		070B350C61834CC5055F020F /* Pods_TikTokCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */; };
+		7020C0B6285CAC06004DE01C /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 7020C0B5285CAC06004DE01C /* explore.json */; };
+		7020C0B8285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020C0B7285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift */; };
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
 		AF158A472858AE4E00667A77 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A462858AE4E00667A77 /* AuthField.swift */; };
 		AF158A492858AE6300667A77 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A482858AE6300667A77 /* AuthButton.swift */; };
 		AF4374F2285B5F7F0012ACF7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F1285B5F7F0012ACF7 /* Notifications.swift */; };
-		AF4374F4285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F3285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift */; };
+		AF4374F4285B67660012ACF7 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F3285B67660012ACF7 /* NotificationsUserFollowTableViewCell.swift */; };
 		AF4374F8285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F7285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift */; };
 		AF4374FA285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4374F9285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift */; };
 		AF4BE93D2850D452006BA719 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */; };
@@ -54,7 +56,6 @@
 		AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */; };
 		AF7F6F44285A136400F3F967 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F43285A136400F3F967 /* RecordButton.swift */; };
 		AF7F6F46285A1E7E00F3F967 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */; };
-		AF9D881328517D9900BBC3D7 /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = AF9D881228517D9900BBC3D7 /* explore.json */; };
 		AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */; };
 		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
 		AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F31284AABFC00E32542 /* PostModel.swift */; };
@@ -86,11 +87,13 @@
 		455AAE7F7E7449B338E2ECD8 /* Pods-TikTokCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokCloneTests/Pods-TikTokCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		49C3BA29BB38AEAFEE73DF47 /* Pods_TikTokClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7020C0B5285CAC06004DE01C /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = explore.json; path = "../../../../../Downloads/TikTok-Code/TikTok/Resources/explore.json"; sourceTree = "<group>"; };
+		7020C0B7285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF158A462858AE4E00667A77 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
 		AF158A482858AE6300667A77 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		AF4374F1285B5F7F0012ACF7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		AF4374F3285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
+		AF4374F3285B67660012ACF7 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		AF4374F7285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationsPostLikeTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		AF4374F9285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
 		AF4BE93C2850D451006BA719 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -136,7 +139,6 @@
 		AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF7F6F43285A136400F3F967 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
-		AF9D881228517D9900BBC3D7 /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = explore.json; path = ../../../../explore.json; sourceTree = "<group>"; };
 		AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
 		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFF45F31284AABFC00E32542 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -217,7 +219,7 @@
 		AF4374FB285B685E0012ACF7 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				AF4374F3285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift */,
+				AF4374F3285B67660012ACF7 /* NotificationsUserFollowTableViewCell.swift */,
 				AF4374F7285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift */,
 				AF4374F9285B683A0012ACF7 /* NotificationsPostCommentTableViewCell.swift */,
 			);
@@ -232,6 +234,7 @@
 				AF4374F5285B67CE0012ACF7 /* Auth */,
 				AF7F6F43285A136400F3F967 /* RecordButton.swift */,
 				AF4374FB285B685E0012ACF7 /* Notifications */,
+				7020C0B7285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -293,7 +296,7 @@
 		AF6EC52F284A37520036EA61 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AF9D881228517D9900BBC3D7 /* explore.json */,
+				7020C0B5285CAC06004DE01C /* explore.json */,
 				AF6EC508284A33EF0036EA61 /* Assets.xcassets */,
 				AF586EE2284F8BDA00DB6655 /* video.mp4 */,
 				AF6EC4FE284A33ED0036EA61 /* SceneDelegate.swift */,
@@ -501,7 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF9D881328517D9900BBC3D7 /* explore.json in Resources */,
+				7020C0B6285CAC06004DE01C /* explore.json in Resources */,
 				AF6EC50C284A33EF0036EA61 /* LaunchScreen.storyboard in Resources */,
 				AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */,
 				AF586EE3284F8BDA00DB6655 /* video.mp4 in Resources */,
@@ -659,7 +662,7 @@
 				AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */,
 				AF6EC54A284A39960036EA61 /* PostViewController.swift in Sources */,
 				AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */,
-				AF4374F4285B67660012ACF7 /* NotifcationsUserFollowTableViewCell.swift in Sources */,
+				AF4374F4285B67660012ACF7 /* NotificationsUserFollowTableViewCell.swift in Sources */,
 				AF6EC537284A38B30036EA61 /* ExploreViewController.swift in Sources */,
 				AF4BE9432850D490006BA719 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				AF6EC550284A39CC0036EA61 /* DatabaseManager.swift in Sources */,
@@ -688,6 +691,7 @@
 				AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */,
 				AF6EC54C284A39AA0036EA61 /* APICaller.swift in Sources */,
 				AF586EDE284F780900DB6655 /* User.swift in Sources */,
+				7020C0B8285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				AF6EC546284A39410036EA61 /* SettingsViewController.swift in Sources */,
 				AF6EC554284A39EB0036EA61 /* HapticsManager.swift in Sources */,
 				AF6EC54E284A39B40036EA61 /* StorageManager.swift in Sources */,

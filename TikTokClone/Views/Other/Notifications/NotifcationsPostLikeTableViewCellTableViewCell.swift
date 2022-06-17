@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol NotifcationsPostLikeTableViewCellDelegate: AnyObject {
+    func notificationsPostLikeTableViewCell(_ cell: NotifcationsPostLikeTableViewCell, didTapPostWith identifier: String)
+}
+
 class NotifcationsPostLikeTableViewCell: UITableViewCell {
 
     static let identifier = "NotifcationsPostLikeTableViewCell"
+    weak var delegate: NotifcationsPostLikeTableViewCellDelegate?
+    
+    var postID: String?
     
     private let postThumbnailImageView: UIImageView = {
         let imageView = UIImageView()
@@ -39,6 +46,15 @@ class NotifcationsPostLikeTableViewCell: UITableViewCell {
         contentView.addSubview(label)
         contentView.addSubview(dateLabel)
         selectionStyle = .none
+        
+        postThumbnailImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapPost))
+        postThumbnailImageView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func didTapPost() {
+        guard let postID = postID else {return}
+        delegate?.notificationsPostLikeTableViewCell(self, didTapPostWith: postID)
     }
     
     required init?(coder: NSCoder) {
@@ -85,5 +101,6 @@ class NotifcationsPostLikeTableViewCell: UITableViewCell {
         postThumbnailImageView.image = UIImage(named: "test")
         label.text = model.text
         dateLabel.text = .date(with: model.date)
+        postID = postFileName
     }
 }
