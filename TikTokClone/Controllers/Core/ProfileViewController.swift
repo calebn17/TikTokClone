@@ -103,11 +103,45 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
                     withReuseIdentifier: ProfileHeaderCollectionReusableView.identifier,
                     for: indexPath) as? ProfileHeaderCollectionReusableView
         else {return UICollectionReusableView()}
-        
+        header.delegate = self
+        if let currentUsername = UserDefaults.standard.string(forKey: "username") {
+            let viewModel = ProfileHeaderViewModel(
+                avatarImageURL: nil,
+                followerCount: 120,
+                followingCount: 200,
+                isFollowing: currentUsername == user.username ? nil : false
+            )
+            header.configure(with: viewModel)
+        }
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.width, height: 300)
+    }
+}
+
+extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
+    func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapPrimaryButtonWith viewModel: ProfileHeaderViewModel) {
+        guard let currentUsername = UserDefaults.standard.string(forKey: "username") else {return}
+        
+        if self.user.username == currentUsername {
+            //Edit Profile
+        }
+        else {
+            //Follow or unfollow current user's profile that we are viewing
+        }
+    }
+    
+    func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapFollowersButtonWith viewModel: ProfileHeaderViewModel) {
+        //
+    }
+    
+    func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapFollowingButtonWith viewModel: ProfileHeaderViewModel) {
+        //
+    }
+    
+    func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapAvatarFor viewModel: ProfileHeaderViewModel) {
+        
     }
 }

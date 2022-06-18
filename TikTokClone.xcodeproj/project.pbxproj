@@ -10,6 +10,7 @@
 		070B350C61834CC5055F020F /* Pods_TikTokCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */; };
 		7020C0B6285CAC06004DE01C /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 7020C0B5285CAC06004DE01C /* explore.json */; };
 		7020C0B8285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020C0B7285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift */; };
+		7075FE61285E59CB00C44290 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075FE60285E59CB00C44290 /* ProfileHeaderViewModel.swift */; };
 		9DF2827E37C9040256438E9C /* Pods_TikTokClone_TikTokCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E75998902F0CE340650C67 /* Pods_TikTokClone_TikTokCloneUITests.framework */; };
 		AF158A472858AE4E00667A77 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A462858AE4E00667A77 /* AuthField.swift */; };
 		AF158A492858AE6300667A77 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF158A482858AE6300667A77 /* AuthButton.swift */; };
@@ -89,6 +90,7 @@
 		690CAF68780C6A90FE3042FB /* Pods_TikTokCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TikTokCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7020C0B5285CAC06004DE01C /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = explore.json; path = "../../../../../Downloads/TikTok-Code/TikTok/Resources/explore.json"; sourceTree = "<group>"; };
 		7020C0B7285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		7075FE60285E59CB00C44290 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileHeaderViewModel.swift; path = TikTokClone/Views/Other/ProfileHeaderViewModel.swift; sourceTree = SOURCE_ROOT; };
 		88BA2118DE5E54DDBE52AB17 /* Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokClone-TikTokCloneUITests/Pods-TikTokClone-TikTokCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF158A462858AE4E00667A77 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
 		AF158A482858AE6300667A77 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		AF6EC533284A379C0036EA61 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7075FE60285E59CB00C44290 /* ProfileHeaderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				AF6EC53B284A38CC0036EA61 /* NotificationViewController.swift in Sources */,
 				AF4BE9412850D478006BA719 /* ExploreUserCollectionViewCell.swift in Sources */,
 				AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */,
+				7075FE61285E59CB00C44290 /* ProfileHeaderViewModel.swift in Sources */,
 				AF6EC53F284A38F20036EA61 /* UserListViewController.swift in Sources */,
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
 				AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */,
