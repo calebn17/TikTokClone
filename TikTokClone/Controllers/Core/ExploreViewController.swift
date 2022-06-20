@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - Setup
+
 class ExploreViewController: UIViewController {
     
     private let searchBar: UISearchBar = {
@@ -20,6 +22,8 @@ class ExploreViewController: UIViewController {
     private var collectionView: UICollectionView?
     
     private var sections = [ExploreSection]()
+    
+//MARK: - View Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,8 @@ class ExploreViewController: UIViewController {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
+    
+//MARK: - Configure Methods
     
     private func setUpSearchBar() {
         navigationItem.titleView = searchBar
@@ -91,9 +97,9 @@ class ExploreViewController: UIViewController {
         view.addSubview(collectionView)
         self.collectionView = collectionView
     }
-    
-    
 }
+
+//MARK: - CollectionView Methods
 
 extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -150,6 +156,8 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
     }
 }
+
+//MARK: - SearchBar Methods
 
 extension ExploreViewController: UISearchBarDelegate {
     
@@ -310,6 +318,8 @@ extension ExploreViewController {
         }
     }
 }
+
+//MARK: - ExploreManager Methods
 
 extension ExploreViewController: ExploreManagerDelegate {
     func pushViewController(_ vc: UIViewController) {

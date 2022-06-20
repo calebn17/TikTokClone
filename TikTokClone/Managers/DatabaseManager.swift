@@ -119,4 +119,23 @@ final class DataBaseManager {
     public func getAllUsers(completion: ([String]) -> Void) {
         
     }
+    
+    public func getPosts(for user: User, completion: @escaping ([PostModel]) -> Void) {
+        
+        let path = "users/\(user.username.lowercased())/posts"
+        database.child(path).observeSingleEvent(of: .value) { snapshot in
+            guard let posts = snapshot.value as? [[String: String]] else {
+                completion([])
+                return
+            }
+            let models: [PostModel] = posts.compactMap({
+                var model = PostModel(identifier: UUID().uuidString,
+                                      user: user)
+                model.fileName = $0["name"] as? String ?? ""
+                model.caption = $0["caption"] as? String ?? ""
+                return model
+            })
+            completion(models)
+        }
+    }
 }

@@ -20,6 +20,13 @@ class PostViewController: UIViewController {
     var player: AVPlayer?
     private var playerDidFinishObserver: NSObjectProtocol?
     
+    private let videoView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        view.clipsToBounds = true
+        return view
+    }()
+    
     private let likeButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -63,6 +70,14 @@ class PostViewController: UIViewController {
         return label
     }()
     
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        spinner.tintColor = .label
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        return spinner
+    }()
+    
     init(model: PostModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -74,9 +89,9 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let colors: [UIColor] = [.red, .green, .blue, .black, .orange, .systemPink]
-        view.backgroundColor = colors.randomElement()
+        view.addSubview(videoView)
+        videoView.addSubview(spinner)
+        view.backgroundColor = .systemBackground
         configureVideo()
         setUpButtons()
         setUpDoubleTapToLike()
@@ -86,6 +101,10 @@ class PostViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        videoView.frame = view.bounds
+        spinner.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        spinner.center = videoView.center
         
         let size: CGFloat = 40
         let yStart: CGFloat = view.height - (size * 4) - 100 - view.safeAreaInsets.bottom
@@ -122,17 +141,36 @@ class PostViewController: UIViewController {
     }
     
     private func configureVideo() {
-        guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {return}
-        let url = URL(fileURLWithPath: path)
-        player = AVPlayer(url: url)
+//        guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {return}
+//        let url = URL(fileURLWithPath: path)
         
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(playerLayer)
-        player?.volume = 0
-        player?.play()
-        
+        StorageManager.shared.getDownloadURL(for: model) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let strongSelf = self else {return}
+                strongSelf.spinner.stopAnimating()
+                strongSelf.spinner.removeFromSuperview()
+                switch result {
+                case .success(let url):
+                    strongSelf.player = AVPlayer(url: url)
+                    let playerLayer = AVPlayerLayer(player: strongSelf.player)
+                    playerLayer.frame = strongSelf.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill
+                    strongSelf.videoView.layer.addSublayer(playerLayer)
+                    strongSelf.player?.volume = 0
+                    strongSelf.player?.play()
+                case .failure:
+                    guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {return}
+                    let url = URL(fileURLWithPath: path)
+                    strongSelf.player = AVPlayer(url: url)
+                    let playerLayer = AVPlayerLayer(player: strongSelf.player)
+                    playerLayer.frame = strongSelf.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill
+                    strongSelf.videoView.layer.addSublayer(playerLayer)
+                    strongSelf.player?.volume = 0
+                    strongSelf.player?.play()
+                }
+            }
+        }
         guard let player = player else {return}
         //plays the video again once it finishes
         playerDidFinishObserver = NotificationCenter.default.addObserver(

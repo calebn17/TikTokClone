@@ -97,7 +97,10 @@ final class ExploreManager {
                 caption: model.caption) {[weak self] in
                     DispatchQueue.main.async {
                         let postID = model.id
-                        let vc = PostViewController(model: PostModel(identifier: postID))
+                        let vc = PostViewController(model: PostModel(identifier: postID,
+                                                                     user: User(username: "kanyewest",
+                                                                                profilePictureURL: nil,
+                                                                                identifier: UUID().uuidString)))
                         self?.delegate?.pushViewController(vc)
                     }
                 }})
@@ -112,7 +115,10 @@ final class ExploreManager {
                 caption: model.caption) {[weak self] in
                     DispatchQueue.main.async {
                         let postID = model.id
-                        let vc = PostViewController(model: PostModel(identifier: postID))
+                        let vc = PostViewController(model: PostModel(identifier: postID,
+                                                                     user: User(username: "kanyewest",
+                                                                                profilePictureURL: nil,
+                                                                                identifier: UUID().uuidString)))
                         self?.delegate?.pushViewController(vc)
                     }
                 }})
@@ -127,7 +133,10 @@ final class ExploreManager {
                 caption: model.caption) {[weak self] in
                     DispatchQueue.main.async {
                         let postID = model.id
-                        let vc = PostViewController(model: PostModel(identifier: postID))
+                        let vc = PostViewController(model: PostModel(identifier: postID,
+                                                                     user: User(username: "kanyewest",
+                                                                                profilePictureURL: nil,
+                                                                                identifier: UUID().uuidString)))
                         self?.delegate?.pushViewController(vc)
                     }
                 }})
@@ -142,7 +151,10 @@ final class ExploreManager {
                 caption: model.caption) {[weak self] in
                     DispatchQueue.main.async {
                         let postID = model.id
-                        let vc = PostViewController(model: PostModel(identifier: postID))
+                        let vc = PostViewController(model: PostModel(identifier: postID,
+                                                                     user: User(username: "kanyewest",
+                                                                                profilePictureURL: nil,
+                                                                                identifier: UUID().uuidString)))
                         self?.delegate?.pushViewController(vc)
                     }
                 }})

@@ -110,7 +110,7 @@ class HomeViewController: UIViewController {
 
 }
 
-//MARK: - UIPage VC DataSource Methods
+//MARK: - UIPageVC Methods
 extension HomeViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
@@ -157,6 +157,8 @@ extension HomeViewController: UIPageViewControllerDataSource {
     }
 }
 
+//MARK: - ScrollView Methods
+
 extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x <= (view.width/2) {
@@ -167,6 +169,8 @@ extension HomeViewController: UIScrollViewDelegate {
         }
     }
 }
+
+//MARK: - PostViewController Methods
 
 extension HomeViewController: PostViewControllerDelegate {
     
@@ -205,6 +209,8 @@ extension HomeViewController: PostViewControllerDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+//MARK: - CommentViewController Methods
 
 extension HomeViewController: CommentViewControllerDelegate {
     func didTapCloseForComments(with viewController: CommentViewController) {

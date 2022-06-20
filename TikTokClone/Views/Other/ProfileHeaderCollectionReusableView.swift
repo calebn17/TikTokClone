@@ -8,6 +8,8 @@
 import UIKit
 import SDWebImage
 
+//MARK: - Setup
+
 protocol ProfileHeaderCollectionReusableViewDelegate: AnyObject {
     func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapPrimaryButtonWith viewModel: ProfileHeaderViewModel)
     func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapFollowersButtonWith viewModel: ProfileHeaderViewModel)
@@ -62,6 +64,8 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
         return button
     }()
     
+//MARK: - Init Methods
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         clipsToBounds = true
@@ -73,6 +77,8 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//MARK: - View Methods
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -92,15 +98,18 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
         addSubview(followingButton)
         addSubview(followersButton)
     }
+
+//MARK: - Configure Methods
     
     private func configureButtons() {
         primaryButton.addTarget(self, action: #selector(didTapPrimaryButton), for: .touchUpInside)
         followingButton.addTarget(self, action: #selector(didTapFollowingButton), for: .touchUpInside)
         followersButton.addTarget(self, action: #selector(didTapFollowersButton), for: .touchUpInside)
         
-        let tap = UIGestureRecognizer(target: self, action: #selector(didTapAvatar))
-        avatarImageView.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAvatar))
         avatarImageView.isUserInteractionEnabled = true
+        avatarImageView.addGestureRecognizer(tap)
+        
     }
     
     func configure(with viewModel: ProfileHeaderViewModel) {
@@ -123,6 +132,8 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
             primaryButton.setTitle("Edit Profile", for: .normal)
         }
     }
+    
+//MARK: - Action Methods
     
     @objc private func didTapPrimaryButton() {
         guard let viewModel = viewModel else {return}
