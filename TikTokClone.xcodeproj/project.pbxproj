@@ -57,6 +57,7 @@
 		AF7A4CB6284A3F5100A5AAB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */; };
 		AF7F6F44285A136400F3F967 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F43285A136400F3F967 /* RecordButton.swift */; };
 		AF7F6F46285A1E7E00F3F967 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */; };
+		AF8846B42861FD1100E45E7E /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8846B32861FD1100E45E7E /* EditProfileViewController.swift */; };
 		AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */; };
 		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
 		AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F31284AABFC00E32542 /* PostModel.swift */; };
@@ -142,6 +143,7 @@
 		AF7A4CB5284A3F5100A5AAB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF7F6F43285A136400F3F967 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
+		AF8846B32861FD1100E45E7E /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
 		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFF45F31284AABFC00E32542 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				AF6EC549284A39960036EA61 /* PostViewController.swift */,
 				AF4DC210284E3B3C00CA6D30 /* CommentViewController.swift */,
 				AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */,
+				AF8846B32861FD1100E45E7E /* EditProfileViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */,
 				AF6EC4FD284A33ED0036EA61 /* AppDelegate.swift in Sources */,
 				AF6EC54A284A39960036EA61 /* PostViewController.swift in Sources */,
+				AF8846B42861FD1100E45E7E /* EditProfileViewController.swift in Sources */,
 				AFFD53632860CA6500CA54E9 /* PostCollectionViewCell.swift in Sources */,
 				AF79880628500AFA00DCCC0B /* ExploreSection.swift in Sources */,
 				AF4374F4285B67660012ACF7 /* NotificationsUserFollowTableViewCell.swift in Sources */,
