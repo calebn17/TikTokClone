@@ -59,6 +59,9 @@
 		AF7F6F46285A1E7E00F3F967 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */; };
 		AF8846B42861FD1100E45E7E /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8846B32861FD1100E45E7E /* EditProfileViewController.swift */; };
 		AF9D881528517E3D00BBC3D7 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */; };
+		AFB500A8286267E30020C5B4 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB500A7286267E30020C5B4 /* SwitchTableViewCell.swift */; };
+		AFB500AA28626A7E0020C5B4 /* SwitchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB500A928626A7E0020C5B4 /* SwitchCellViewModel.swift */; };
+		AFB500AC2862B45F0020C5B4 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB500AB2862B45F0020C5B4 /* SettingsModel.swift */; };
 		AFF45F30284AA1A200E32542 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F2F284AA1A200E32542 /* Extensions.swift */; };
 		AFF45F32284AABFC00E32542 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF45F31284AABFC00E32542 /* PostModel.swift */; };
 		AFFD53632860CA6500CA54E9 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFD53622860CA6500CA54E9 /* PostCollectionViewCell.swift */; };
@@ -145,6 +148,9 @@
 		AF7F6F45285A1E7E00F3F967 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		AF8846B32861FD1100E45E7E /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AF9D881428517E3D00BBC3D7 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
+		AFB500A7286267E30020C5B4 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		AFB500A928626A7E0020C5B4 /* SwitchCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCellViewModel.swift; sourceTree = "<group>"; };
+		AFB500AB2862B45F0020C5B4 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		AFF45F2F284AA1A200E32542 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFF45F31284AABFC00E32542 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		AFFD53622860CA6500CA54E9 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 				AF7F6F43285A136400F3F967 /* RecordButton.swift */,
 				AF4374FB285B685E0012ACF7 /* Notifications */,
 				7020C0B7285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift */,
+				AFB500A7286267E30020C5B4 /* SwitchTableViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 				AF79880728500B1A00DCCC0B /* ExploreCell.swift */,
 				AF79880928500B3B00DCCC0B /* ExploreSectionType.swift */,
 				AF4374F1285B5F7F0012ACF7 /* Notifications.swift */,
+				AFB500AB2862B45F0020C5B4 /* SettingsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				7075FE60285E59CB00C44290 /* ProfileHeaderViewModel.swift */,
+				AFB500A928626A7E0020C5B4 /* SwitchCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB500AC2862B45F0020C5B4 /* SettingsModel.swift in Sources */,
 				AF6EC501284A33ED0036EA61 /* HomeViewController.swift in Sources */,
 				AF4374F8285B680F0012ACF7 /* NotifcationsPostLikeTableViewCellTableViewCell.swift in Sources */,
 				AF158A492858AE6300667A77 /* AuthButton.swift in Sources */,
@@ -684,6 +694,7 @@
 				AF6EC4FF284A33ED0036EA61 /* SceneDelegate.swift in Sources */,
 				7075FE61285E59CB00C44290 /* ProfileHeaderViewModel.swift in Sources */,
 				AF6EC53F284A38F20036EA61 /* UserListViewController.swift in Sources */,
+				AFB500AA28626A7E0020C5B4 /* SwitchCellViewModel.swift in Sources */,
 				AF6EC507284A33ED0036EA61 /* TikTokClone.xcdatamodeld in Sources */,
 				AF586EDC284F77E000DB6655 /* PostCommentModel.swift in Sources */,
 				AF4BE93F2850D469006BA719 /* ExplorePostCollectionViewCell.swift in Sources */,
@@ -705,6 +716,7 @@
 				AF586EDE284F780900DB6655 /* User.swift in Sources */,
 				7020C0B8285CCB17004DE01C /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				AF6EC546284A39410036EA61 /* SettingsViewController.swift in Sources */,
+				AFB500A8286267E30020C5B4 /* SwitchTableViewCell.swift in Sources */,
 				AF6EC554284A39EB0036EA61 /* HapticsManager.swift in Sources */,
 				AF6EC54E284A39B40036EA61 /* StorageManager.swift in Sources */,
 			);

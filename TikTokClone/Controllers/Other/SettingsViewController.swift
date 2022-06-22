@@ -8,21 +8,12 @@
 import UIKit
 import SafariServices
 
-struct SettingsSection {
-    let title: String
-    let options: [SettingsOption]
-}
-
-struct SettingsOption {
-    let title: String
-    let handler: (() -> Void)
-}
-
 class SettingsViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
         return tableView
     }()
     
@@ -32,16 +23,23 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         sections = [
+            SettingsSection(title: "Preferences",
+                            options:
+                                [SettingsOption(
+                                    title: "Save Videos", handler: {})
+                                ]
+                           ),
             SettingsSection(title: "Information",
                             options:
                                 [SettingsOption(
                                     title: "Terms of Service", handler: {[weak self] in
                                         DispatchQueue.main.async {
-                                            guard let url = URL(string: "https://www.tiktok.com/legal/terms-of-service") else {return}
+                                            guard let url = URL(string: "https://www.tiktok.com/legal/terms-of-use") else {return}
                                             let vc = SFSafariViewController(url: url)
                                             self?.present(vc, animated: true, completion: nil)
                                         }
-                                    }),
+                                    }
+                                ),
                                  SettingsOption(
                                      title: "Privacy", handler: {[weak self] in
                                          DispatchQueue.main.async {
@@ -49,10 +47,10 @@ class SettingsViewController: UIViewController {
                                              let vc = SFSafariViewController(url: url)
                                              self?.present(vc, animated: true, completion: nil)
                                          }
-                                     }),
+                                     }
+                                 )
                                 ]
                            )
-            
         ]
         view.backgroundColor = .systemBackground
         title = "Settings"
@@ -121,6 +119,14 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let model = sections[indexPath.section].options[indexPath.row]
+        if model.title == "Save Videos" {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as? SwitchTableViewCell
+            else {return UITableViewCell()}
+            cell.delegate = self
+            cell.configure(with: SwitchCellViewModel(title: model.title, isOn: UserDefaults.standard.bool(forKey: "save_video")))
+            return cell
+            
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = model.title
         cell.accessoryType = .disclosureIndicator
@@ -136,5 +142,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
+    }
+}
+
+extension SettingsViewController: SwitchTableViewCellDelegate {
+    func switchTableViewCell(_ cell: SwitchTableViewCell, didUpdateSwitchTo isOn: Bool) {
+        print(isOn)
+        UserDefaults.standard.setValue(isOn, forKey: "save_video")
     }
 }

@@ -188,6 +188,8 @@ extension HomeViewController: PostViewControllerDelegate {
             //niling dataSource prevents scrolling because the vc doesn't have any data on the previous or next post
             followingPageViewController.dataSource = nil
         }
+        
+        HapticsManager.shared.vibrateForSelection()
         //present comment tray
         //using this implementation instead of a simple present in order to have that "tray" affect
         let vc = CommentViewController(post: post)
