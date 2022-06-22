@@ -11,7 +11,7 @@ struct PostCommentModel {
     let text: String
     let user: User
     let date: Date
-    
+
     static func mockComments() -> [PostCommentModel] {
         let user = User(username: "kanyewest", profilePictureURL: nil, identifier: UUID().uuidString)
         var comments = [PostCommentModel]()
@@ -20,11 +20,11 @@ struct PostCommentModel {
             "This is rad",
             "I'm learning so much"
         ]
-       
+
         for comment in text {
             comments.append(PostCommentModel(text: comment, user: user, date: Date()))
         }
-        
+
         return comments
     }
 }

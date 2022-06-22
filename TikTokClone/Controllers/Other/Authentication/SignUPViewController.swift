@@ -9,12 +9,12 @@ import UIKit
 import SafariServices
 
 class SignUPViewController: UIViewController {
-    
-    //MARK: - Setup
-    
-    //gets called in the TabBarVC when user successfully signs in
+
+    // MARK: - Setup
+
+    // gets called in the TabBarVC when user successfully signs in
     public var completion: (() -> Void)?
-    
+
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -23,17 +23,16 @@ class SignUPViewController: UIViewController {
         imageView.layer.cornerRadius = 15
         return imageView
     }()
-    
+
     private let usernameField = AuthField(type: .username)
     private let emailField = AuthField(type: .email)
     private let passwordField = AuthField(type: .password)
-    
+
     private let signUpButton = AuthButton(type: .signUp, title: nil)
     private let termsOfServiceButton = AuthButton(type: .plain, title: "Terms of Service")
-    
-    
-    //MARK: - ViewMethods
-    
+
+    // MARK: - ViewMethods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -42,15 +41,15 @@ class SignUPViewController: UIViewController {
         configureFields()
         configureButtons()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         usernameField.becomeFirstResponder()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         let imageSize: CGFloat = 100
         logoImageView.frame = CGRect(x: (view.width - imageSize)/2, y: view.safeAreaInsets.top + 5, width: imageSize, height: imageSize)
         usernameField.frame = CGRect(x: 20, y: logoImageView.bottom + 20, width: view.width - 40, height: 55)
@@ -58,11 +57,11 @@ class SignUPViewController: UIViewController {
         passwordField.frame = CGRect(x: 20, y: emailField.bottom + 15, width: view.width - 40, height: 55)
         signUpButton.frame = CGRect(x: 20, y: passwordField.bottom + 20, width: view.width - 40, height: 55)
         termsOfServiceButton.frame = CGRect(x: 20, y: signUpButton.bottom + 40, width: view.width - 40, height: 55)
-        
+
     }
-    
-    //MARK: - Configure Methods
-    
+
+    // MARK: - Configure Methods
+
     private func addSubviews() {
         view.addSubview(logoImageView)
         view.addSubview(usernameField)
@@ -71,17 +70,17 @@ class SignUPViewController: UIViewController {
         view.addSubview(signUpButton)
         view.addSubview(termsOfServiceButton)
     }
-    
+
     private func configureButtons() {
         signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         termsOfServiceButton.addTarget(self, action: #selector(didTapTerms), for: .touchUpInside)
     }
-    
+
     private func configureFields() {
         usernameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
-        
+
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.width, height: 50))
         toolBar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
@@ -92,9 +91,9 @@ class SignUPViewController: UIViewController {
         emailField.inputAccessoryView = toolBar
         passwordField.inputAccessoryView = toolBar
     }
-    
-    //MARK: - Action Methods
-    
+
+    // MARK: - Action Methods
+
     @objc private func didTapSignUp() {
         didTapKeyboardDone()
         guard let username = usernameField.text,
@@ -114,14 +113,13 @@ class SignUPViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             return
         }
-        
+
         AuthManager.shared.signUp(username: username, email: email, password: password) { [weak self] success in
             DispatchQueue.main.async {
                 if success {
                     HapticsManager.shared.vibrate(for: .success)
                     self?.dismiss(animated: true, completion: nil)
-                }
-                else {
+                } else {
                     HapticsManager.shared.vibrate(for: .error)
                     let alert = UIAlertController(title: "Sign Up Failed",
                                                   message: "Something went wrong when trying to register",
@@ -132,14 +130,14 @@ class SignUPViewController: UIViewController {
             }
         }
     }
-    
+
     @objc private func didTapTerms() {
         didTapKeyboardDone()
         guard let url = URL(string: "https://www.tiktok.com/terms") else {return}
         let vc = SFSafariViewController(url: url)
         present(vc, animated: true, completion: nil)
     }
-    
+
     @objc private func didTapKeyboardDone() {
         usernameField.resignFirstResponder()
         emailField.resignFirstResponder()
@@ -148,6 +146,5 @@ class SignUPViewController: UIViewController {
 }
 
 extension SignUPViewController: UITextFieldDelegate {
-    
-}
 
+}

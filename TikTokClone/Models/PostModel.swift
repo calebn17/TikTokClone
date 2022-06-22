@@ -13,9 +13,9 @@ struct PostModel {
     var fileName: String = ""
     var caption: String = ""
     var isLikedByCurrentUser = false
-    
+
     static func mockModels() -> [PostModel] {
-        
+
         var posts = [PostModel]()
         for _ in 0...100 {
             let post = PostModel(
@@ -29,7 +29,7 @@ struct PostModel {
         }
         return posts
     }
-    
+
     var videoChildPath: String {
         return "videos/\(user.username.lowercased())/\(fileName)"
     }

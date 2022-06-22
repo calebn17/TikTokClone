@@ -8,18 +8,17 @@
 import Foundation
 import UIKit
 
-
 /// Object that deals with haptic feedback
 final class HapticsManager {
-    
+
     /// Shared singleton instance
     static let shared = HapticsManager()
-    
+
     /// Private initializer
     private init() {}
-    
-//MARK: - Public Methods
-    
+
+// MARK: - Public Methods
+
     /// Vibrate for lite selection of item
     public func vibrateForSelection() {
         DispatchQueue.main.async {
@@ -28,7 +27,7 @@ final class HapticsManager {
             generator.selectionChanged()
         }
     }
-    
+
     /// Trigger feedback vibration based on event type
     /// - Parameter type: Success, Error, or Warning type
     public func vibrate(for type: UINotificationFeedbackGenerator.FeedbackType) {
@@ -39,4 +38,3 @@ final class HapticsManager {
         }
     }
 }
-

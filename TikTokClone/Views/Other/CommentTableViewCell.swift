@@ -11,7 +11,7 @@ import SDWebImage
 class CommentTableViewCell: UITableViewCell {
 
     static let identifier = "CommentTableViewCell"
-    
+
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -19,21 +19,21 @@ class CommentTableViewCell: UITableViewCell {
         imageView.tintColor = .label
         return imageView
     }()
-    
+
     private let commentLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .label
         return label
     }()
-    
+
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .secondaryLabel
         return label
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         clipsToBounds = true
@@ -43,16 +43,16 @@ class CommentTableViewCell: UITableViewCell {
         contentView.addSubview(commentLabel)
         contentView.addSubview(dateLabel)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         commentLabel.sizeToFit()
         dateLabel.sizeToFit()
-        
+
         let imageSize: CGFloat = 40
         let commentLabelHeight = min(contentView.height - dateLabel.top, commentLabel.height)
         avatarImageView.frame = CGRect(
@@ -74,23 +74,22 @@ class CommentTableViewCell: UITableViewCell {
             height: commentLabelHeight
         )
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         dateLabel.text = nil
         commentLabel.text = nil
         avatarImageView.image = nil
     }
-    
+
     public func configure(with model: PostCommentModel) {
         commentLabel.text = model.text
         dateLabel.text = .date(with: model.date)
         if let url = model.user.profilePictureURL {
            // avatarImageView.image = SD
-        }
-        else {
+        } else {
             avatarImageView.image = UIImage(systemName: "person.circle")
         }
-        
+
     }
 }
