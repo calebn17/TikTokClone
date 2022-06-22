@@ -8,6 +8,8 @@
 import UIKit
 import SafariServices
 
+//MARK: - Setup
+
 class SettingsViewController: UIViewController {
     
     private let tableView: UITableView = {
@@ -18,6 +20,8 @@ class SettingsViewController: UIViewController {
     }()
     
     private var sections = [SettingsSection]()
+    
+//MARK: - View Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +70,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
+
+//MARK: - Configure
     
     private func createFooter() {
         let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: 100))
@@ -76,6 +82,8 @@ class SettingsViewController: UIViewController {
         footer.addSubview(button)
         tableView.tableFooterView = footer
     }
+
+//MARK: - Action Methods
     
     @objc private func didTapSignOut() {
         let actionSheet = UIAlertController(title: "Sign Out", message: "Would you like to sign out", preferredStyle: .actionSheet)
@@ -106,6 +114,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
+//MARK: - TableView Methods
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -145,9 +154,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - SwitchTableViewCell Methods
 extension SettingsViewController: SwitchTableViewCellDelegate {
     func switchTableViewCell(_ cell: SwitchTableViewCell, didUpdateSwitchTo isOn: Bool) {
-        print(isOn)
+        HapticsManager.shared.vibrateForSelection()
         UserDefaults.standard.setValue(isOn, forKey: "save_video")
     }
 }

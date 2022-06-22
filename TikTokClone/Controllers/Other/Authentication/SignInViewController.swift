@@ -110,10 +110,11 @@ class SignInViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    HapticsManager.shared.vibrate(for: .success)
                     self?.dismiss(animated: true)
                     break
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    HapticsManager.shared.vibrate(for: .error)
                     let alert = UIAlertController(title: "Sign In Failed", message: "Please check your email and password", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                     self?.present(alert, animated: true, completion: nil)

@@ -123,11 +123,13 @@ class CameraViewController: UIViewController {
             recordButton.toggle(for: .notRecording)
             //stop recording
             captureOutput.stopRecording()
+            HapticsManager.shared.vibrateForSelection()
         }
         else {
             recordButton.toggle(for: .recording)
             //setting the path that the videos will be saved to
             guard var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+            HapticsManager.shared.vibrateForSelection()
             url.appendPathComponent("video.mov")
             //deleting any old video that was saved at this path before
             try? FileManager.default.removeItem(at: url)
@@ -139,6 +141,7 @@ class CameraViewController: UIViewController {
     @objc private func didTapNext() {
         //push caption controller
         guard let recordedVideoURL = recordedVideoURL else {return}
+        HapticsManager.shared.vibrateForSelection()
         let vc = CaptionViewController(videoURL: recordedVideoURL)
         navigationController?.pushViewController(vc, animated: true)
     }

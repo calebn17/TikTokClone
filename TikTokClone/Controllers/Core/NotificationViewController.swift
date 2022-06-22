@@ -177,17 +177,19 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
-extension NotificationViewController: NotifcationsUserFollowTableViewCellDelegate {
+//MARK: - NotificationsUserFollowTableViewCellDelegate
+
+extension NotificationViewController: NotificationsUserFollowTableViewCellDelegate {
     func notificationUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapFollowFor username: String) {
         DataBaseManager.shared.follow(username: username) { success in
             if !success {
                 print("Something failed")
             }
         }
-        
     }
     
     func notificationUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatarFor username: String) {
+        HapticsManager.shared.vibrateForSelection()
         let vc = ProfileViewController(user: User(username: username, profilePictureURL: nil, identifier: "123"))
         vc.title = username.uppercased()
         navigationController?.pushViewController(vc, animated: true)
@@ -208,6 +210,7 @@ extension NotificationViewController: NotificationsPostCommentTableViewCellDeleg
 
 extension NotificationViewController {
     func openPost(with identifier: String) {
+        HapticsManager.shared.vibrateForSelection()
         //resolve the post model from the DB
         let vc = PostViewController(model:
                                         PostModel(
@@ -215,8 +218,8 @@ extension NotificationViewController {
                                             user: User(
                                                 username: "kanyewest",
                                                 profilePictureURL: nil,
-                                                identifier: UUID().uuidString)
-                                        ))
+                                                identifier: UUID().uuidString
+                                            )))
         vc.title = "Video"
         navigationController?.pushViewController(vc, animated: true)
     }

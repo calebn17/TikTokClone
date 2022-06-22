@@ -8,6 +8,8 @@
 import UIKit
 import AVFoundation
 
+//MARK: - Setup
+
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
     func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel)
@@ -78,6 +80,8 @@ class PostViewController: UIViewController {
         return spinner
     }()
     
+//MARK: - Init
+    
     init(model: PostModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -86,6 +90,8 @@ class PostViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//MARK: - View Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,6 +133,8 @@ class PostViewController: UIViewController {
         )
         profileButton.layer.cornerRadius = size/2
     }
+    
+//MARK: - Configure
     
     private func setUpButtons() {
         view.addSubview(likeButton)
@@ -189,6 +197,8 @@ class PostViewController: UIViewController {
         view.isUserInteractionEnabled = true
     }
     
+//MARK: - Action Methods
+    
     @objc private func didTapProfileButton() {
         delegate?.postViewController(self, didTapProfileButtonFor: model)
     }
@@ -213,6 +223,7 @@ class PostViewController: UIViewController {
         if !model.isLikedByCurrentUser {
             model.isLikedByCurrentUser = true
         }
+        HapticsManager.shared.vibrateForSelection()
         
         let touchPoint = gesture.location(in: view)
         let imageView = UIImageView(image: UIImage(systemName: "heart.fill"))

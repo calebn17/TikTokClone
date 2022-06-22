@@ -37,6 +37,7 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 6
         button.setTitle("Follow", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .systemPink
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .semibold)
         return button
@@ -45,6 +46,7 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
     private let followersButton: UIButton = {
         let button = UIButton()
         button.setTitle("0\nFollowers", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 6
         button.titleLabel?.textAlignment = .center
@@ -56,6 +58,7 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
     private let followingButton: UIButton = {
         let button = UIButton()
         button.setTitle("0\nFollowing", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 6
         button.titleLabel?.textAlignment = .center

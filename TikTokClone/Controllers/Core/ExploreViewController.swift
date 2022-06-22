@@ -327,6 +327,7 @@ extension ExploreViewController: ExploreManagerDelegate {
     }
     
     func didTapHashTag(_ hashtag: String) {
+        HapticsManager.shared.vibrateForSelection()
         searchBar.text = hashtag
         searchBar.becomeFirstResponder()
     }

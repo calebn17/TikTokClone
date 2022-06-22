@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol NotifcationsUserFollowTableViewCellDelegate: AnyObject {
+protocol NotificationsUserFollowTableViewCellDelegate: AnyObject {
     func notificationUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapFollowFor username: String)
     func notificationUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatarFor username: String)
 }
@@ -15,7 +15,7 @@ protocol NotifcationsUserFollowTableViewCellDelegate: AnyObject {
 class NotificationsUserFollowTableViewCell: UITableViewCell {
 
     static let identifier = "NotifcationsUserFollowTableViewCell"
-    weak var delegate: NotifcationsUserFollowTableViewCellDelegate?
+    weak var delegate: NotificationsUserFollowTableViewCellDelegate?
     
     var username: String?
     

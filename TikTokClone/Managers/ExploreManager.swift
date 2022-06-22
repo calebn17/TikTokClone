@@ -8,23 +8,36 @@
 import Foundation
 import UIKit
 
+/// Delegate interface to notify manager events
 protocol ExploreManagerDelegate: AnyObject {
+    
+    /// Notify a view controller should be pushed
+    ///  - Parameter vc: The view controller to present
     func pushViewController(_ vc: UIViewController)
+    
+    /// Notify a hashtag element was tapped
+    ///  - Parameter hashtag: the tapped hashtag
     func didTapHashTag(_ hashtag: String)
 }
 
+/// Manager that handles explore view content
 final class ExploreManager {
     
+    /// Shared singleton instance
     static let shared = ExploreManager()
     
+    /// Delegate to notify events
     weak var delegate: ExploreManagerDelegate?
     
+    /// Represents banner action types
     enum BannerAction: String {
-        case post
-        case hashtag
-        case user
+        case post       /// Post type
+        case hashtag    /// Hashtag type
+        case user       ///User Type
     }
     
+    /// Gets explore data for banners
+    /// - Returns: Returns collection of models
     public func getExploreBanners() -> [ExploreBannerViewModel] {
         guard let exploreData = parseExploreData() else {return []}
         
@@ -55,6 +68,8 @@ final class ExploreManager {
         })
     }
     
+    /// Gets explore data for popular creators
+    /// - Returns: Returns collection of models
     public func getExploreCreators() -> [ExploreUserViewModel] {
         guard let exploreData = parseExploreData() else {return []}
         
@@ -74,6 +89,8 @@ final class ExploreManager {
                 }})
     }
     
+    /// Gets explore data for hastags
+    /// - Returns: Returns collection of models
     public func getExploreHashtags() -> [ExploreHashtagViewModel] {
         guard let exploreData = parseExploreData() else {return []}
         
@@ -88,6 +105,8 @@ final class ExploreManager {
                 }})
     }
     
+    /// Gets explore data for trending posts
+    /// - Returns: Returns collection of models
     public func getExploreTrendingPosts() -> [ExplorePostViewModel] {
         guard let exploreData = parseExploreData() else {return []}
         
@@ -106,6 +125,8 @@ final class ExploreManager {
                 }})
     }
     
+    /// Gets explore data for recent posts
+    /// - Returns: Returns collection of models
     public func getExploreRecentPosts() -> [ExplorePostViewModel] {
         guard let exploreData = parseExploreData() else {return []}
         
@@ -124,6 +145,8 @@ final class ExploreManager {
                 }})
     }
     
+    /// Gets explore data for popular posts
+    /// - Returns: Returns collection of models
     public func getExplorePopularPosts() -> [ExplorePostViewModel] {
         guard let exploreData = parseExploreData() else {return []}
         
@@ -160,6 +183,8 @@ final class ExploreManager {
                 }})
     }
     
+    /// Parse explore JSON data
+    /// - Returns: Returns an optional response model
     private func parseExploreData() -> ExploreResponse? {
         guard let path = Bundle.main.path(forResource: "explore", ofType: "json") else {return nil}
         

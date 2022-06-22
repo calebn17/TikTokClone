@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - Setup
+
 protocol CommentViewControllerDelegate: AnyObject {
     func didTapCloseForComments(with viewController: CommentViewController)
 }
@@ -31,6 +33,8 @@ class CommentViewController: UIViewController {
         return tableView
     }()
     
+//MARK: - Init
+    
     init(post: PostModel) {
         self.post = post
         super.init(nibName: nil, bundle: nil)
@@ -39,6 +43,8 @@ class CommentViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//MARK: - View Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,17 +64,17 @@ class CommentViewController: UIViewController {
         tableView.frame = CGRect(x: 0, y: closeButton.bottom, width: view.width, height: view.width - closeButton.bottom)
     }
     
+//MARK: - Action Methods
     private func fetchPostComments() {
-        
         self.comments = PostCommentModel.mockComments()
     }
     
     @objc private func didTapClose() {
         delegate?.didTapCloseForComments(with: self)
     }
-
-   
 }
+
+//MARK: - TableView Methods
 
 extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
     

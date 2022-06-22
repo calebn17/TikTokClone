@@ -118,6 +118,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         //Open Post
+        HapticsManager.shared.vibrateForSelection()
         let post = posts[indexPath.row]
         let vc = PostViewController(model: post)
         vc.title = "Video"
@@ -196,7 +197,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 
 extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapPrimaryButtonWith viewModel: ProfileHeaderViewModel) {
-        
+        HapticsManager.shared.vibrateForSelection()
         if isCurrentUserProfile {
             //Edit Profile
             let vc = EditProfileViewController()
@@ -237,12 +238,14 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     }
     
     func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapFollowersButtonWith viewModel: ProfileHeaderViewModel) {
+        HapticsManager.shared.vibrateForSelection()
         let vc = UserListViewController(type: .followers, user: user)
         vc.users = followers
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapFollowingButtonWith viewModel: ProfileHeaderViewModel) {
+        HapticsManager.shared.vibrateForSelection()
         let vc = UserListViewController(type: .following, user: user)
         vc.users = following
         navigationController?.pushViewController(vc, animated: true)
@@ -250,6 +253,7 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
     
     func profileHeaderCollectionReusableView(_ header: ProfileHeaderCollectionReusableView, didTapAvatarFor viewModel: ProfileHeaderViewModel) {
         guard isCurrentUserProfile else { return }
+        HapticsManager.shared.vibrateForSelection()
         let actionSheet = UIAlertController(title: "Profile Picture", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
@@ -294,10 +298,12 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                 switch result {
                 case .success(let downloadURL):
                     UserDefaults.standard.set(downloadURL.absoluteString, forKey: "profile_picture_url")
+                    HapticsManager.shared.vibrate(for: .success)
                     strongSelf.user = User(username: strongSelf.user.username, profilePictureURL: downloadURL, identifier: strongSelf.user.username)
                     ProgressHUD.showSuccess("Updated!")
                     strongSelf.collectionView.reloadData()
                 case .failure:
+                    HapticsManager.shared.vibrate(for: .error)
                     ProgressHUD.showError("Failed to upload profile picture")
                 }
             }
