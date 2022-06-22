@@ -4,7 +4,7 @@
 //
 //  Created by Caleb Ngai on 6/3/22.
 //
-
+import Appirater
 import UIKit
 import SafariServices
 
@@ -29,13 +29,36 @@ class SettingsViewController: UIViewController {
         sections = [
             SettingsSection(title: "Preferences",
                             options:
-                                [SettingsOption(
+                                [
+                                    SettingsOption(
                                     title: "Save Videos", handler: {})
+                                ]
+                           ),
+            SettingsSection(title: "Enjoying the app?",
+                            options:
+                                [
+                                    SettingsOption(
+                                    title: "Rate App", handler: {
+                                        DispatchQueue.main.async {
+                                            Appirater.tryToShowPrompt()
+                                        }
+                                    }
+                                 ),
+                                    SettingsOption(
+                                    title: "Share App", handler: {[weak self] in
+                                        DispatchQueue.main.async {
+                                            guard let url = URL(string: "https://facebook.com") else {return}
+                                            let vc = UIActivityViewController(activityItems: [url], applicationActivities: [])
+                                            self?.present(vc, animated: true, completion: nil)
+                                        }
+                                    }
+                                 )
                                 ]
                            ),
             SettingsSection(title: "Information",
                             options:
-                                [SettingsOption(
+                                [
+                                    SettingsOption(
                                     title: "Terms of Service", handler: {[weak self] in
                                         DispatchQueue.main.async {
                                             guard let url = URL(string: "https://www.tiktok.com/legal/terms-of-use") else {return}
