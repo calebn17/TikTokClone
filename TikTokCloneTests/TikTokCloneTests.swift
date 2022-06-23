@@ -20,5 +20,10 @@ class TikTokCloneTests: XCTestCase {
         XCTAssertFalse(post.caption.isEmpty)
         XCTAssertEqual(post.videoChildPath, "videos/billgates/")
     }
+    
+    
 
 }
+
+
+
